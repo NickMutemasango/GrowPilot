@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/*
+ * GrowPilot design tokens.
+ * Brand: a confident, trustworthy blue. Accent: warm amber for
+ * achievement moments (streaks, badges). Neutrals: cool slate.
+ */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif,
+    system-ui, sans-serif;
+
+  --color-brand-50: #f0f6ff;
+  --color-brand-100: #e0ecff;
+  --color-brand-200: #c7dcff;
+  --color-brand-300: #a3c4fe;
+  --color-brand-400: #7aa6fc;
+  --color-brand-500: #5a8cf8;
+  --color-brand-600: #4479f2;
+  --color-brand-700: #3466e0;
+  --color-brand-800: #2d54b8;
+  --color-brand-900: #2a4791;
+  --color-brand-950: #1d2b5c;
+
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+  --color-accent-700: #b45309;
+
+  --color-success-50: #ecfdf5;
+  --color-success-600: #059669;
+
+  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px -4px rgb(15 23 42 / 0.08);
+  --shadow-card: 0 1px 3px rgb(15 23 42 / 0.05), 0 12px 32px -8px rgb(15 23 42 / 0.12);
+  --shadow-float: 0 2px 4px rgb(15 23 42 / 0.04), 0 20px 48px -12px rgb(30 48 174 / 0.22);
+
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-white font-sans text-slate-900 antialiased;
+}
+
+/* Consistent, visible keyboard focus across the app. */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
