@@ -1,26 +1,127 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * GrowPilot brand system
+ * ----------------------
+ * Every brand colour lives here. Change a value once and it updates across
+ * the whole platform. Tailwind turns each `--color-*` token into utilities,
+ * e.g. `bg-primary`, `text-ink`, `border-line`.
+ */
+@theme {
+  /* Brand */
+  --color-primary: #176b52; /* Deep forest green */
+  --color-primary-hover: #12573f; /* Darker green for hover / pressed */
+  --color-primary-strong: #0e4433; /* Focus ring, high-contrast accents */
+  --color-secondary: #e8f3ec; /* Light sage green */
+  --color-secondary-hover: #d6eadd;
+  --color-accent: #f4c95d; /* Soft golden yellow (decoration only, not text) */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Neutrals */
+  --color-canvas: #fafaf7; /* Warm white page background */
+  --color-surface: #ffffff; /* Cards, header, menus */
+  --color-ink: #1f2937; /* Dark charcoal body text */
+  --color-ink-muted: #4b5563; /* Secondary text (7:1 on canvas) */
+  --color-line: #e2e5df; /* Subtle borders */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* ONE TYPE SCALE FOR THE WHOLE PLATFORM. Change a value here and every
+     page follows; no page sets its own font sizes.
+     Body and interface text: 16px. Secondary text and badges: 14px.
+     Headings: 18px to 40px, never larger. */
+  --text-sm: 0.875rem; /* 14px - badges, captions, table sub-labels */
+  --text-base: 1rem; /* 16px - body, buttons, navigation, form fields */
+  --text-lg: 1rem; /* 16px - body copy that used the larger step */
+  --text-xl: 1.125rem; /* 18px - card titles, small headings */
+  --text-2xl: 1.25rem; /* 20px - section headings */
+  --text-3xl: 1.5rem; /* 24px - page headings on phones */
+  --text-4xl: 1.75rem; /* 28px - page headings */
+  --text-5xl: 2.125rem; /* 34px - large page headings */
+  --text-6xl: 2.5rem; /* 40px - the homepage headline, the largest text used */
+
+  /* Elevation */
+  --shadow-header: 0 1px 0 0 rgb(31 41 55 / 0.06), 0 4px 16px -8px rgb(31 41 55 / 0.12);
+  --shadow-button: 0 1px 2px 0 rgb(23 107 82 / 0.25);
+  --shadow-menu: 0 16px 32px -12px rgb(31 41 55 / 0.25);
+  --shadow-card: 0 12px 32px -12px rgb(31 41 55 / 0.22);
+  --shadow-photo: 0 24px 56px -20px rgb(14 68 51 / 0.35);
+
+  /* Motion: short, gentle entrances only. Use with `motion-safe:` so they
+     never run for people who ask their device to reduce motion. */
+  --animate-fade-up: fade-up 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 800ms ease-out both;
+  /* One gentle fall, used once when a course is completed. */
+  --animate-confetti: confetti 1800ms ease-in both;
+
+  @keyframes confetti {
+    from {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(150px) rotate(480deg);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    /* Leave room for the sticky header when jumping to anchors. */
+    scroll-padding-top: 5rem;
+    /* iOS: keep text the size we set when a phone is turned sideways. */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem; /* 16px body text */
+    line-height: 1.6;
+    /* A long email address, code or link wraps instead of widening the page. */
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* One clear, consistent focus indicator for every interactive element. */
+  :focus-visible {
+    outline: 3px solid var(--color-primary-strong);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

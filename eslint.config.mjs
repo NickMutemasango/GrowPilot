@@ -20,6 +20,12 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    rules: {
+      // Allow intentionally unused arguments when prefixed with "_".
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+    },
+  },
 ];
 
 export default eslintConfig;

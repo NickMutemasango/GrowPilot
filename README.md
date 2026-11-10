@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GrowPilot Academy
 
-## Getting Started
+A simple, accessible online learning platform by GrowPilot.
+Built with Next.js (App Router), TypeScript, Tailwind CSS v4 and Lucide icons.
 
-First, run the development server:
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | Purpose |
+| --- | --- |
+| `src/app/globals.css` | Brand colours, fonts and shadows (the `@theme` block) |
+| `src/config/navigation.ts` | Header and mobile-menu links |
+| `src/components/brand/Logo.tsx` | Logo and brand mark |
+| `src/components/ui/Button.tsx` | Primary / secondary buttons |
+| `src/components/navigation/` | Header, nav links, mobile menu |
+| `src/components/home/HeroSection.tsx` | Homepage hero |
+| `src/data/courses.ts` | **Sample** course data (replace before launch) |
+| `src/data/course-details.ts` | **Sample** lessons, outcomes and requirements per course |
+| `src/data/instructors.ts` | **Sample** instructor profiles |
+| `src/lib/courses.ts` | Course data access (swap for a database here) |
+| `src/lib/course-filters.ts` | Search and filter logic |
+| `src/components/courses/` | Catalogue, search, filters, cards, level badge |
+| `src/components/course-details/` | Course page sections, curriculum accordion, enrolment card |
+| `src/components/auth/` | Register, log-in and forgot-password forms and layout |
+| `src/lib/auth/` | Auth service (not connected yet), validation, safe redirects |
+| `src/data/sample-students.ts` | **Sample** students and enrolments for the dashboard preview |
+| `src/lib/student.ts` | Dashboard data (progress, status, next lesson) |
+| `src/components/dashboard/` | Student dashboard sections and progress bar |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Accounts and sign-in (not connected yet)
 
-## Learn More
+The `/register`, `/login` and `/forgot-password` pages are fully built, but **no authentication
+provider is configured**. Every action shows a "not available yet" message; nothing is sent
+or stored, and no email is sent.
 
-To learn more about Next.js, take a look at the following resources:
+To switch them on:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Choose a provider (for example Auth.js, Supabase Auth, Clerk or Firebase Auth).
+2. Add its configuration and secrets as environment variables (never in source code).
+3. Replace the function bodies in `src/lib/auth/index.ts` and set `authStatus` to `true`.
+4. For "Continue with Google", create a Google OAuth client and register it with the provider.
+5. Password reset must always show the same message whether or not the email is registered.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+After login, students go to the `next` page if it is a safe path on this site
+(`src/lib/auth/redirect.ts`), otherwise to `/dashboard`.
 
-## Deploy on Vercel
+## Student dashboard (preview)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`/dashboard` shows **sample** students only, with a banner saying so: `/dashboard` (a student
+with courses) and `/dashboard?preview=new` (a brand-new student). It is not protected, because
+there are no accounts yet. Once sign-in and enrolment exist, load the signed-in student's
+records on the server in `src/app/dashboard/page.tsx`, send visitors who are not signed in to
+`/login?next=/dashboard`, and remove the preview banner.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Image credits
+
+- Homepage hero: photo by Vitaly Gariev on [Unsplash](https://unsplash.com/photos/cMsdRjEApeo), free under the Unsplash License.
+- Course thumbnails: free Unsplash photos; each photo ID is listed in `src/data/courses.ts`.

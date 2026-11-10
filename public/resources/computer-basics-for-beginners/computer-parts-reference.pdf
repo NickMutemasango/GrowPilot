@@ -1,0 +1,94 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 827 >>
+stream
+BT
+/F2 22 Tf
+72 760 Td
+(Computer Parts Reference Sheet) Tj
+ET
+BT
+/F2 14 Tf
+72 712 Td
+(Computer Basics for Beginners - Lesson 2) Tj
+ET
+BT
+/F2 14 Tf
+72 680 Td
+(The main parts) Tj
+ET
+BT
+/F1 12 Tf
+86 658 Td
+(- Screen \(monitor\): where you see everything.) Tj
+ET
+BT
+/F1 12 Tf
+86 634 Td
+(- Keyboard: for typing letters and numbers.) Tj
+ET
+BT
+/F1 12 Tf
+86 610 Td
+(- Mouse or touchpad: for pointing at things and clicking.) Tj
+ET
+BT
+/F1 12 Tf
+86 586 Td
+(- Power button: switches the computer on.) Tj
+ET
+BT
+/F2 14 Tf
+72 552 Td
+(Laptop or desktop?) Tj
+ET
+BT
+/F1 12 Tf
+72 530 Td
+(A laptop has the screen, keyboard and touchpad joined together, so you can carry) Tj
+ET
+BT
+/F1 12 Tf
+72 512 Td
+(  it. A desktop computer has separate parts that stay on a desk.) Tj
+ET
+BT
+/F1 9 Tf
+72 48 Td
+(GrowPilot Academy - sample learning material) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Title (Computer Parts Reference Sheet) /Producer (GrowPilot Academy) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+0000001328 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+1419
+%%EOF

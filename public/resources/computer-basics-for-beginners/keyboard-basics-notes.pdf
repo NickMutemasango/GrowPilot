@@ -1,0 +1,99 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 951 >>
+stream
+BT
+/F2 22 Tf
+72 760 Td
+(Keyboard Basics Notes) Tj
+ET
+BT
+/F2 14 Tf
+72 712 Td
+(Computer Basics for Beginners - Lesson 5) Tj
+ET
+BT
+/F2 14 Tf
+72 680 Td
+(Useful keys to know) Tj
+ET
+BT
+/F1 12 Tf
+86 658 Td
+(- Space bar: the long key at the bottom. It adds a space between words.) Tj
+ET
+BT
+/F1 12 Tf
+86 634 Td
+(- Enter: starts a new line or confirms a choice.) Tj
+ET
+BT
+/F1 12 Tf
+86 610 Td
+(- Backspace: deletes the character to the left of the cursor.) Tj
+ET
+BT
+/F1 12 Tf
+86 586 Td
+(- Shift: hold it down while pressing a letter to type a capital letter.) Tj
+ET
+BT
+/F2 14 Tf
+72 552 Td
+(Example: typing a capital letter) Tj
+ET
+BT
+/F1 12 Tf
+72 530 Td
+(To type "John", hold down Shift, press J, let go of Shift, then type "ohn".) Tj
+ET
+BT
+/F2 14 Tf
+72 496 Td
+(Remember) Tj
+ET
+BT
+/F1 12 Tf
+72 474 Td
+(If you hold a key down, it repeats. Press Backspace to remove any extra letters.) Tj
+ET
+BT
+/F1 9 Tf
+72 48 Td
+(GrowPilot Academy - sample learning material) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Title (Keyboard Basics Notes) /Producer (GrowPilot Academy) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+0000001452 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+1534
+%%EOF
